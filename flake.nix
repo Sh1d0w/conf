@@ -56,6 +56,11 @@
     #   inputs.nixpkgs.follows = "nixpkgs";
     # };
 
+    LazyVim = {
+      url = "github:matadaniel/LazyVim-module";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
 
     alejandra = {
