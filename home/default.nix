@@ -211,7 +211,6 @@ in {
     home-manager.enable = true;
     htop.enable = true;
     zoxide.enable = true;
-    lua.enable = true;
   };
 
   xdg.enable = true;
