@@ -210,9 +210,6 @@ in {
     home-manager.enable = true;
     htop.enable = true;
     zoxide.enable = true;
-    lazygit.enable = true;
-    ripgrep.enable = true;
-    lazyvim.enable = true;
   };
 
   xdg.enable = true;
