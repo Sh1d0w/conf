@@ -1,9 +1,9 @@
-# configuration using nixos, nix-darwin, home-manager, devbox
+# configuration using nixos, nix-darwin, home-manager
 
 ## Introduction
 
 This repo primarily consists as an exercise in using a nix flake to manage
-our system / user configurations via nixpkgs, home-manager, devbox and standard
+our system / user configurations via nixpkgs, home-manager and standard
 symlink farming.
 
 We hope it serves as a personal motivation to investigate NixOS more generally.
@@ -167,8 +167,7 @@ The tools we use generally fall into the following categories.
 When using a stable version of `nixpkgs`, there does not seem to be an elegant
 way of frequently updating individual packages.
 
-In our setup we prefer to follow nixpkgs-unstable and install most packages
-with either `home-manager` or `devbox global`.
+In our setup we prefer to follow nixpkgs-unstable and install most packages `home-manager`
 
 ### Updating flake inputs
 

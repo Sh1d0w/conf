@@ -13,11 +13,11 @@ in {
     programs/readline.nix
     programs/git.nix
     programs/starship.nix
-    # programs/exa.nix  # TODO: not maintained, remove when ready.
     programs/eza.nix # TODO: Might need newer hm version. eza not found.
     programs/zsh.nix
     programs/bash.nix
     programs/tmux.nix
+    programs/node.nix
   ];
 
   home = {
@@ -37,9 +37,6 @@ in {
     # home-manager for an admin type user.
     # NOTE: do not add home-manager to home.packages or
     # system packages to avoid collisions.
-    # NOTE: devbox can alternatively be used as a global / main package manager
-    # and comes with its own lockfile. Installing devbox also will install nix
-    # on macOS and non-NixOS systems.
     packages = with pkgs;
       [
         alejandra
@@ -54,7 +51,6 @@ in {
         ctags
         curl
         delta # diff
-        devbox # global and per project dep manager.
         direnv #
         du-dust # du + rust = dust
         # entr
@@ -73,8 +69,6 @@ in {
         miller
         moreutils
         mosh
-        # micromamba # NOTE: Had issues, but devbox version seems fine.
-        # neovim  # NOTE: Managed through devbox.
         ncurses
         nushell
         pandoc
@@ -173,8 +167,6 @@ in {
       LISTLINKS = 1;
       # LS_COLORS handled by dircolors module.
       # LS_COLORS = "ExGxBxDxCxEgEdxbxgxcxd";
-      MAMBARC = "${config.xdg.configHome}/mamba/config.yaml";
-      MAMBA_ROOT_PREFIX = "${config.xdg.stateHome}/mamba";
       MANCOLOR = 1;
       MANPAGER = "nvim --clean +Man!";
       PAGER = "less";
@@ -205,8 +197,6 @@ in {
       "....." = "cd ../../../..";
       "..4" = "cd ../../../..";
       dev = "nix develop";
-      mamba = "micromamba";
-      conda = "micromamba";
     };
   };
 

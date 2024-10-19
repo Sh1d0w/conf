@@ -37,7 +37,6 @@
       # source "$HOME/.config/sh/path.sh"
 
       # hooks not supported by home-manager
-      eval "$(micromamba shell hook --shell=bash)" 2&> /dev/null
     '';
   };
 }

@@ -75,7 +75,6 @@ unalias run-help &> /dev/null
 # ----------------------------------------------------------------------------
 # shell hooks
 # ----------------------------------------------------------------------------
-eval "$(micromamba shell hook --shell=zsh)" 2&> /dev/null
 eval "$(starship init zsh)" 2&> /dev/null
 eval "$(zoxide init zsh)" 2&> /dev/null
 eval "$(rbenv init -)" 2&> /dev/null

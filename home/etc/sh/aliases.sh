@@ -30,8 +30,6 @@ alias .3="cd ../../.."
 alias .....="cd ../../../.."
 alias .4="cd ../../../.."
 alias emc="emacsclient"
-alias conda="micromamba"
-alias mamba="micromamba"
 alias hit='git --git-dir="${HOME}/.git/" --work-tree="${HOME}"'
 
 # Git
