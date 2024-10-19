@@ -56,6 +56,11 @@
     #   inputs.nixpkgs.follows = "nixpkgs";
     # };
 
+    autin = {
+      url = "github:atuinsh/atuin";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
 
     alejandra = {
