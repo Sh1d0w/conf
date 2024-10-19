@@ -17,7 +17,6 @@ in {
     programs/zsh.nix
     programs/bash.nix
     programs/tmux.nix
-    programs/nodejs.nix
   ];
 
   home = {
