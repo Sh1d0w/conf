@@ -11,10 +11,9 @@ For this reason we purposefully avoid some of the more layered frameworks (and
 their utility libraries) mentioned in the [References](#References) below, but
 try to take some structural cues.
 
-
 ## Setup
 
-###  Install nix
+### Install nix
 
 Except on NixOS, we must install nix (the package manager) itself to build the flake.
 
@@ -69,12 +68,20 @@ nix --extra-experimental-features "nix-command flakes" build ".#darwinConfigurat
 result/sw/bin/darwin-rebuild switch --flake ".#${host}"
 ```
 
+### SSL errors
+
+```bash
+sudo rm /etc/ssl/certs/ca-certificates.crt
+sudo ln -s /nix/var/nix/profiles/default/etc/ssl/certs/ca-bundle.crt /etc/ssl/certs/ca-certificates.crt
+```
+
 #### nix-darwin rebuilding
 
 After nix-darwin is built, `darwin-rebuild` is available. Rebuild the system
 and user configuration via
 
 ```bash
+git submodule update --init
 ./switch "${host}"
 # or
 darwin-rebuild switch --flake "#${host}"
@@ -85,7 +92,6 @@ darwin-rebuild switch --flake "#${host}"
 After initially installing nix or macOS updates `nix-darwin switch` can fail
 for a variety of reasons.
 
-
 nix-darwin might fail if it cannot find `/run`. Try
 
 ```bash
@@ -94,6 +100,7 @@ printf 'run\tprivate/var/run\n' | sudo tee -a /etc/synthetic.conf
 ```
 
 nix-darwin might fail to write certain files if they already exist. Try
+
 ```bash
 ./switch backup
 # or
@@ -103,7 +110,6 @@ sudo mv /etc/bashrc /etc/bashrc.before-nix-darwin
 sudo mv /etc/zshrc /etc/zshrc.before-nix-darwin
 sudo mv /etc/zshenv /etc/zshenv.before-nix-darwin
 ```
-
 
 ## home-manager
 
@@ -121,23 +127,22 @@ nix build --extra-experimental-features "nix-command flakes" ".#homeConfiguratio
 ## Repo Structure
 
 - [host](./host): Contains system specific configurations.
-   In theory these configurations are at the highest level,
-   but we suspect that architecture-specific configurations leak into lower
-   levels, e.g., with new Apple Silicon based macs.
-   Cf. [Mitchell Hashimoto's nixos setup][mitchellh_nixos_config] to see how
-   vms are used to abstract some of these nuances away. We may settle upon
-   a pattern where some hosts are abstract, to have common files to apply to
-   a company mandated MacBook vs a personal one.
+  In theory these configurations are at the highest level,
+  but we suspect that architecture-specific configurations leak into lower
+  levels, e.g., with new Apple Silicon based macs.
+  Cf. [Mitchell Hashimoto's nixos setup][mitchellh_nixos_config] to see how
+  vms are used to abstract some of these nuances away. We may settle upon
+  a pattern where some hosts are abstract, to have common files to apply to
+  a company mandated MacBook vs a personal one.
 - [home (home-manager)](./home): The user-specific program configurations
-   that will be managed by home-manager. Typicaly these profiles are host
-   agnostic to the extent possible.
+  that will be managed by home-manager. Typicaly these profiles are host
+  agnostic to the extent possible.
 - [lib](./lib/): Common boilerplate library functions used in this
   flake, e.g., for building nix-darwin and standalone home-manager configurations.
 - [overlays](./overlays) containing package overrides, e.g., to use a
-   different channel. Not used much if at all at the moment.
+  different channel. Not used much if at all at the moment.
 - [etc](./etc): Configurations not managed by home-manager, but
   via a symlink farm manager.
-
 
 ## Package management
 
@@ -149,7 +154,6 @@ The primary management options are
    user configurations entails a system switch and sudo password.
 1. Linux / macOS: Use home-manager in a standalone fashion, but configured
    within the flake. This is the only option for non-NixOS Linux distributions.
-
 
 The tools we use generally fall into the following categories.
 
@@ -209,7 +213,6 @@ by this repo are
 - obsidian.md (notes)
 - Orion & firefox (web browser)
 
-
 ## References
 
 - This flake was initially a near clone of
@@ -217,7 +220,6 @@ by this repo are
 - [Mitchell Hashimoto's nixos config][mitchellh_nixos_config]
 - [flake-utils-plus][flake-utils-plus]
 
-
-[matthias_nixos_config]: <https://github.com/MatthiasBenaets/nixos-config>
-[mitchellh_nixos_config]: <https://github.com/mitchellh/nixos-config>
-[flake-utils-plus]: <https://github.com/gytis-ivaskevicius/flake-utils-plus>
+[matthias_nixos_config]: https://github.com/MatthiasBenaets/nixos-config
+[mitchellh_nixos_config]: https://github.com/mitchellh/nixos-config
+[flake-utils-plus]: https://github.com/gytis-ivaskevicius/flake-utils-plus

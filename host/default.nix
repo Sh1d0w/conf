@@ -49,6 +49,8 @@
   # does not appear to be included in nix-darwin
   # i18n.defaultLocale = "en_US.UTF-8";
 
+  ids.uids.nixbld = lib.mkForce 30000;
+
   # use unstable nix so we can access flakes
   nix = {
     configureBuildUsers = true;

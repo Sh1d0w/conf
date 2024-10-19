@@ -159,7 +159,7 @@ _switch() {
         attr="$DIR/#$2"
     fi
     echo "switch: Switching configuration using $1 switch --flake ${attr}"
-    "$1" --show-trace --verbose switch --flake "${attr}"
+    "$1" --show-trace --verbose switch --flake "${attr}" --option build-users-group ''
 }
 
 switch_ln() {
