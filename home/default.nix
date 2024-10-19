@@ -76,9 +76,9 @@ in {
         procs # ps replacement
         q-text-as-data
         ripgrep
-        # rustup # NOTE: Seems to cause issues, such as mixing libs. Checkout fenix?
         shellcheck
         sd # simple sed
+        skhd
         starship
         tealdeer
         tectonic
@@ -131,6 +131,10 @@ in {
       # };
       ".config/sh" = {
         source = ./etc/sh;
+        recursive = true;
+      };
+      ".config/skhd" = {
+        source = ./etc/skhd;
         recursive = true;
       };
       ".config/ipython/profile_default/ipython_config.py".source = ./etc/ipython/config.py;
@@ -211,6 +215,13 @@ in {
     home-manager.enable = true;
     htop.enable = true;
     zoxide.enable = true;
+  };
+
+  services = {
+    skhd = {
+      enable = true;
+      skhdConfig = "${config.xdg.configHome}/skhd/.skhdrc";
+    };
   };
 
   xdg.enable = true;
