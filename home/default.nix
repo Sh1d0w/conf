@@ -17,7 +17,6 @@ in {
     programs/zsh.nix
     programs/bash.nix
     programs/tmux.nix
-    programs/lazyvim.nix
   ];
 
   home = {
@@ -211,6 +210,8 @@ in {
     home-manager.enable = true;
     htop.enable = true;
     zoxide.enable = true;
+    lazygit.enable = true;
+    ripgrep.enable = true;
   };
 
   xdg.enable = true;
