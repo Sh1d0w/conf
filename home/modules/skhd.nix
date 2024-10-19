@@ -35,6 +35,17 @@ in
           # You can place custom configuration here
           cmd - return : open -a Terminal
 
+          # Slack
+          alt - s: open -a /Applications/Slack.app/Contents/MacOS/Slack
+
+          # WezTerm
+          alt - w: |
+            if pgrep -x "WezTerm" > /dev/null; then
+              open -a WezTerm
+            else
+              open -a /Applications/WezTerm.app/Contents/MacOS/WezTerm
+            fi
+
           ${config.services.skhd.extraConfig}
         '';
       };
