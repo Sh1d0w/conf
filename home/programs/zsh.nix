@@ -113,6 +113,8 @@
       # Align with warp.
       bindkey "^F" autosuggest-accept
 
+      bindkey "^R" history-incremental-search-backward
+
       # hooks not supported by home-manager
       # awscli completions according to docs. It does not seem
       # these are available by default or via carapace as of 2024-05-01.
