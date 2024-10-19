@@ -30,10 +30,10 @@
     casks = [
       "google-chrome"
       "hammerspoon"
-      "jetbrains-toolbox"
+      # "jetbrains-toolbox"
       "rectangle"
       "wezterm"
-      "warp"
+      # "warp"
     ];
     taps = [];
   };
