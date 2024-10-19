@@ -3,8 +3,8 @@
 with lib;
 
 let
-  skhdConfigFile = "${config.xdg.configHome}/skhd/skhdrc";
-  launchAgentPath = "${config.xdg.configHome}/Library/LaunchAgents/com.user.skhd.plist";
+  skhdConfigFile = "${config.home.homeDirectory}/.config/skhd/skhdrc";
+  launchAgentPath = "${config.home.homeDirectory}/Library/LaunchAgents/com.user.skhd.plist";
 in
 {
   # Option to enable or disable skhd service
@@ -22,7 +22,7 @@ in
     };
   };
 
-  # Activation logic for skhd
+  # Conditional configuration based on whether skhd is enabled
   config = mkIf config.services.skhd.enable {
     # Install skhd package
     home.packages = [ pkgs.skhd ];
