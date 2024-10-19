@@ -23,7 +23,7 @@
         "type": "github"
       }
     },
-    "autin": {
+    "atuin": {
       "inputs": {
         "fenix": "fenix_2",
         "flake-compat": "flake-compat",
@@ -91,7 +91,7 @@
     "fenix_2": {
       "inputs": {
         "nixpkgs": [
-          "autin",
+          "atuin",
           "nixpkgs"
         ],
         "rust-analyzer-src": "rust-analyzer-src_2"
@@ -487,7 +487,7 @@
     "root": {
       "inputs": {
         "alejandra": "alejandra",
-        "autin": "autin",
+        "atuin": "atuin",
         "darwin": "darwin",
         "home-manager": "home-manager",
         "neovim-nightly-overlay": "neovim-nightly-overlay",
