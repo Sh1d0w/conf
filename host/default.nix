@@ -34,17 +34,17 @@
   };
 
   # Fonts can also be installed by home-manager.
-  # fonts = {
-  #   # Fonts
-  #   fontDir.enable = true;
-  #   fonts = [
-  #     (pkgs.nerdfonts.override {
-  #       fonts = [
-  #         "JetBrainsMono"
-  #       ];
-  #     })
-  #   ];
-  # };
+  fonts = {
+    # Fonts
+    fontDir.enable = true;
+    fonts = [
+      (pkgs.nerdfonts.override {
+        fonts = [
+          "JetBrainsMono"
+        ];
+      })
+    ];
+  };
 
   # does not appear to be included in nix-darwin
   # i18n.defaultLocale = "en_US.UTF-8";

@@ -28,10 +28,9 @@
     brews = [
     ];
     casks = [
-      "firefox"
+      "google-chrome"
       "hammerspoon"
       "jetbrains-toolbox"
-      "linearmouse"
       "rectangle"
       "wezterm"
       "warp"
@@ -64,7 +63,7 @@
         autohide-delay = 0.0;
         autohide-time-modifier = 0.0;
         mru-spaces = false;
-        orientation = "bottom";
+        orientation = "left";
         showhidden = true;
         tilesize = 64;
       };
