@@ -49,6 +49,7 @@ in {
         # coreutils-prefixed
         carapace # cross-shell completions
         ctags
+        nodejs
         curl
         delta # diff
         direnv #
