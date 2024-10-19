@@ -17,6 +17,7 @@ in {
     programs/zsh.nix
     programs/bash.nix
     programs/tmux.nix
+    programs/neovim.nix
   ];
 
   home = {
