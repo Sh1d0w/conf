@@ -41,7 +41,6 @@ in {
       [
         alejandra
         awscli2
-        autin
         bash
         bandwhich
         bat # cat clone

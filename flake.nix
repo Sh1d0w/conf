@@ -56,7 +56,7 @@
     #   inputs.nixpkgs.follows = "nixpkgs";
     # };
 
-    autin = {
+    atuin = {
       url = "github:atuinsh/atuin";
       inputs.nixpkgs.follows = "nixpkgs";
     };
