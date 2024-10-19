@@ -210,11 +210,114 @@ switch_update() {
     nix flake lock --update-input nixpkgs --update-input "$1"
 }
 
+switch_uninstall() {
+    echo "Warning: This will uninstall Nix from your system. Are you sure? (y/N)"
+    read -r response
+    if [[ "$response" =~ ^([yY][eE][sS]|[yY])$ ]]; then
+        uninstall_nix
+    else
+        echo "Uninstall cancelled."
+    fi
+}
 
+uninstall_nix() {
+    # Detect the operating system
+    if [[ "$(uname)" == "Darwin" ]]; then
+        uninstall_nix_macos
+    elif [[ "$(uname)" == "Linux" ]]; then
+        uninstall_nix_linux
+    else
+        echo "Unsupported operating system. This script only works on macOS and Linux."
+        exit 1
+    fi
+}
+
+uninstall_nix_linux() {
+    if [[ -d /nix/var/nix/profiles/default ]]; then
+        echo "Detected multi-user Nix installation on Linux."
+        
+        echo "Stopping and disabling Nix daemon..."
+        sudo systemctl stop nix-daemon.service
+        sudo systemctl disable nix-daemon.socket nix-daemon.service
+        sudo systemctl daemon-reload
+
+        echo "Removing Nix files..."
+        sudo rm -rf /etc/nix /etc/profile.d/nix.sh /etc/tmpfiles.d/nix-daemon.conf /nix ~root/.nix-channels ~root/.nix-defexpr ~root/.nix-profile
+
+        echo "Removing build users..."
+        for i in $(seq 1 32); do
+            sudo userdel nixbld$i
+        done
+        sudo groupdel nixbld
+
+        echo "Please check and remove Nix-related lines from the following files if they exist:"
+        echo "  /etc/bash.bashrc"
+        echo "  /etc/bashrc"
+        echo "  /etc/profile"
+        echo "  /etc/zsh/zshrc"
+        echo "  /etc/zshrc"
+    else
+        echo "Detected single-user Nix installation on Linux."
+        rm -rf /nix
+    fi
+
+    echo "Nix has been uninstalled from your system."
+}
+
+uninstall_nix_macos() {
+    if [[ -d /nix/var/nix/profiles/default ]]; then
+        echo "Detected multi-user Nix installation on macOS."
+
+        echo "Removing Nix-related lines from shell configuration files..."
+        sudo mv /etc/zshrc.backup-before-nix /etc/zshrc
+        sudo mv /etc/bashrc.backup-before-nix /etc/bashrc
+        sudo mv /etc/bash.bashrc.backup-before-nix /etc/bash.bashrc
+
+        echo "Stopping and removing Nix daemon services..."
+        sudo launchctl unload /Library/LaunchDaemons/org.nixos.nix-daemon.plist
+        sudo rm /Library/LaunchDaemons/org.nixos.nix-daemon.plist
+        sudo launchctl unload /Library/LaunchDaemons/org.nixos.darwin-store.plist
+        sudo rm /Library/LaunchDaemons/org.nixos.darwin-store.plist
+
+        echo "Removing nixbld group and users..."
+        sudo dscl . -delete /Groups/nixbld
+        for u in $(sudo dscl . -list /Users | grep _nixbld); do 
+            sudo dscl . -delete /Users/$u
+        done
+
+        echo "Removing Nix Store volume from fstab..."
+        sudo sed -i '' '/Nix Store/d' /etc/fstab
+
+        echo "Removing nix line from /etc/synthetic.conf..."
+        sudo sed -i '' '/^nix$/d' /etc/synthetic.conf
+
+        echo "Removing Nix files..."
+        sudo rm -rf /etc/nix /var/root/.nix-profile /var/root/.nix-defexpr /var/root/.nix-channels ~/.nix-profile ~/.nix-defexpr ~/.nix-channels
+
+        echo "Removing Nix Store volume..."
+        sudo diskutil apfs deleteVolume /nix
+
+        echo "Nix has been uninstalled from your system."
+        echo "Note: An empty /nix directory may remain until you reboot."
+    else
+        echo "Detected single-user Nix installation on macOS."
+        rm -rf /nix
+        echo "Nix has been uninstalled from your system."
+    fi
+}
+
+switch_install() {
+    if [ "$(uname -s)" = "Darwin" ]; then
+        echo "Installing Xcode Command Line Tools..."
+        xcode-select --install
+    fi
+    echo "Installing Nix..."
+    curl -L https://nixos.org/nix/install | sh -s -- --daemon
+}
 
 # Parse subcommands.
 case "$1" in
-    system|home|ln|update)
+    system|home|ln|update|uninstall|install)  # Add 'install' here
         cmd="$1"
         shift
         ;;
