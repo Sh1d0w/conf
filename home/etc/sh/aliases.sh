@@ -32,7 +32,7 @@ alias .4="cd ../../../.."
 alias emc="emacsclient"
 alias hit='git --git-dir="${HOME}/.git/" --work-tree="${HOME}"'
 
-alias update="~/config/switch"
+alias update="~/conf/switch"
 
 # Git
 alias gc="git commit -m"
