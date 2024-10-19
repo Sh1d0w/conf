@@ -7,8 +7,8 @@
 }: {
   programs.git = {
     enable = true;
-    userName = "Shawn O'Hare";
-    userEmail = "shawn@shawnohare.com";
+    userName = "Radoslav Vitanov";
+    userEmail = "radoslav.vitanov@icloud.com";
     lfs.enable = true;
 
     aliases = {
@@ -38,10 +38,14 @@
       # core.askPass = ""; # needs to be empty to use terminal for ask pass
       credential.helper = "cache --timeout 604800";
       init = {
-        defaultBranch = "master";
+        defaultBranch = "main";
       };
       github = {
-        user = "shawnohare";
+        user = "sh1d0w";
+      };
+      pull = {
+        rebase = true;
+        ff = true;
       };
       push = {
         default = "tracking";

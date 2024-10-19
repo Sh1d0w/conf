@@ -119,25 +119,17 @@
 
       # Target hosts / machines.
       work = {
-        user.name = "Shawn.OHare";
+        user.name = "vitanov";
         host = macos.arm.host;
         home = macos.arm.home;
         overlays = 0;
       };
 
-      mbp2016 = {
-        user.name = "shawn";
-        description = "MacBook Pro 2016";
+      mbp2019 = {
+        user.name = "radoslav";
+        description = "MacBook Pro 2019";
         host = macos.intel.host;
         home = macos.intel.home;
-        overlays = 0;
-      };
-
-      mba2022 = {
-        user.name = "shawn";
-        description = "MacBook Air 2022";
-        host = macos.arm.host;
-        home = macos.arm.home;
         overlays = 0;
       };
     };
@@ -157,9 +149,9 @@
     # transitioning to a stand-alone home-manager set up so that
     # home configurations can work in general Linux environments.
     darwinConfigurations = {
-      mbp2016 = mkDarwin {
+      mbp2019 = mkDarwin {
         inherit darwin home-manager inputs;
-        target = targets.mbp2016;
+        target = targets.mbp2019;
       };
 
       work = mkDarwin {
@@ -179,16 +171,9 @@
         target = targets.work;
       };
 
-      shawn = mkHomeConfiguration {
+      radoslav = mkHomeConfiguration {
         inherit home-manager inputs;
-        target = targets.mba2022;
-      };
-
-      # configs keyed with user names allow simply running `switch` to update
-      # home manager configurations.
-      "Shawn.OHare" = mkHomeConfiguration {
-        inherit home-manager inputs;
-        target = targets.work;
+        target = targets.mbp2019;
       };
     };
 

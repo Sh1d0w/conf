@@ -8,8 +8,8 @@
 # See https://docs.haskellstack.org/en/stable/yaml_configuration/#templates
 templates:
   params:
-   author-name: "Shawn O'Hare"
-   author-email: shawn@oshawnohare.com
-   github-username: shawnohare
+    author-name: "Radoslav Vitanov"
+    author-email: radoslav.vitanov@icloud.com
+    github-username: sh1d0w
 
 local-bin-path: /usr/local/bin
