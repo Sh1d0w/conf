@@ -42,11 +42,6 @@ in {
     # on macOS and non-NixOS systems.
     packages = with pkgs;
       [
-        # # Adds the 'hello' command to your environment. It prints a friendly
-        # # "Hello, world!" when run.
-        _1password
-        hello
-
         alejandra
         awscli2
         bash
