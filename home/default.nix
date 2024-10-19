@@ -18,6 +18,9 @@ in {
     programs/bash.nix
     programs/tmux.nix
     programs/atuin.nix
+
+    # Modules
+    modules/skhd.nix
   ];
 
   home = {
@@ -78,7 +81,6 @@ in {
         ripgrep
         shellcheck
         sd # simple sed
-        skhd
         starship
         tealdeer
         tectonic
@@ -220,7 +222,6 @@ in {
   services = {
     skhd = {
       enable = true;
-      skhdConfig = "${config.xdg.configHome}/skhd/.skhdrc";
     };
   };
 
