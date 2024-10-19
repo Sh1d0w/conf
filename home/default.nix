@@ -134,6 +134,10 @@ in {
       #   recursive = true;
       #   source = ./etc/config;
       # };
+      ".config/sh" = {
+        source = ./etc/sh;
+        recursive = true;
+      };
       ".config/ipython/profile_default/ipython_config.py".source = ./etc/ipython/config.py;
       ".local/bin" = {
         recursive = true;
