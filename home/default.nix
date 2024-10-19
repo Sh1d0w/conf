@@ -17,6 +17,7 @@ in {
     programs/zsh.nix
     programs/bash.nix
     programs/tmux.nix
+    programs/autin.nix
   ];
 
   home = {
@@ -40,6 +41,7 @@ in {
       [
         alejandra
         awscli2
+        autin
         bash
         bandwhich
         bat # cat clone
