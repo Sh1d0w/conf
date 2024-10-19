@@ -135,10 +135,6 @@ in {
         source = ./etc/sh;
         recursive = true;
       };
-      ".config/skhd" = {
-        source = ./etc/skhd;
-        recursive = true;
-      };
       ".config/ipython/profile_default/ipython_config.py".source = ./etc/ipython/config.py;
       ".local/bin" = {
         recursive = true;
