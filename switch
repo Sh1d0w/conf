@@ -294,8 +294,13 @@ uninstall_nix_macos() {
         echo "Removing Nix files..."
         sudo rm -rf /etc/nix /var/root/.nix-profile /var/root/.nix-defexpr /var/root/.nix-channels ~/.nix-profile ~/.nix-defexpr ~/.nix-channels
 
-        echo "Removing Nix Store volume..."
-        sudo diskutil apfs deleteVolume /nix
+         echo "Removing Nix Store volume..."
+        if [ -x /usr/sbin/diskutil ]; then
+            sudo /usr/sbin/diskutil apfs deleteVolume /nix
+        else
+            echo "Warning: diskutil command not found. Unable to remove Nix Store volume automatically."
+            echo "You may need to remove the /nix volume manually using Disk Utility."
+        fi
 
         echo "Nix has been uninstalled from your system."
         echo "Note: An empty /nix directory may remain until you reboot."
