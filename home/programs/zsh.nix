@@ -102,6 +102,7 @@
 
     # Extras to add to .zshrc
     initExtra = ''
+      source "${config.xdg.configHome}/sh/rc.sh"
       bindkey -v
       autoload -U chpwd_recent_dirs cdr add-zsh-hook
       add-zsh-hook chpwd chpwd_recent_dirs
