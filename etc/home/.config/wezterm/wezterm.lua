@@ -27,18 +27,18 @@ local config = {
 
     window_decorations = 'RESIZE',
 
-    keys = {
-		{
-			key = 'f',
-			mods = 'CTRL',
-			action = wezterm.action.ToggleFullScreen,
-		},
-		{
-			key = '\'',
-			mods = 'CTRL',
-			action = wezterm.action.ClearScrollback 'ScrollbackAndViewport',
-		},
-	},
+    -- keys = {
+	-- 	{
+	-- 		key = 'f',
+	-- 		mods = 'CTRL',
+	-- 		action = wezterm.action.ToggleFullScreen,
+	-- 	},
+	-- 	{
+	-- 		key = '\'',
+	-- 		mods = 'CTRL',
+	-- 		action = wezterm.action.ClearScrollback 'ScrollbackAndViewport',
+	-- 	},
+	-- },
 }
 
 return config
