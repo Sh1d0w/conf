@@ -3,7 +3,7 @@
   pkgs,
   ...
 }: {
-  programs.autin = {
+  programs.atuin = {
     enable = true;
 
     enableZshIntegration = true;

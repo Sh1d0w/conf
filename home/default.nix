@@ -17,7 +17,7 @@ in {
     programs/zsh.nix
     programs/bash.nix
     programs/tmux.nix
-    programs/autin.nix
+    programs/atuin.nix
   ];
 
   home = {
