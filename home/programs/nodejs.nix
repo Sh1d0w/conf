@@ -3,7 +3,7 @@
   pkgs,
   ...
 }: {
-  programs.node = {
+  programs.nodejs = {
     enable = true;
 
     npm.enable = true;
