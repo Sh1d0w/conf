@@ -11,13 +11,34 @@ local config = {
         "JetBrainsMono Nerd Font",
         { weight = 'Regular' }
     ),
-    font_size = 14,
     bold_brightens_ansi_colors = false,
     -- dpi = 144.0,
     -- freetype_load_target = "Normal",
     -- freetype_render_target = "HorizontalLcd",
 
-    color_scheme = 'hadalized dark p3'
+    color_scheme = 'Catppuccin Mocha',
+
+    enable_tab_bar = false,
+	font_size = 16.0,
+
+    macos_window_background_blur = 30,
+
+    window_background_opacity = 1.0,
+
+    window_decorations = 'RESIZE',
+
+    keys = {
+		{
+			key = 'f',
+			mods = 'CTRL',
+			action = wezterm.action.ToggleFullScreen,
+		},
+		{
+			key = '\'',
+			mods = 'CTRL',
+			action = wezterm.action.ClearScrollback 'ScrollbackAndViewport',
+		},
+	},
 }
 
 return config

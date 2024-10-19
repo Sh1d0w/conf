@@ -101,13 +101,13 @@
       };
 
       # Non-symbol settings.
-      add_newline = true;
-      directory.style = "blue bold";
-      scan_timeout = 100;
-      shell.disabled = false;
-      time.disabled = false;
-      username.show_always = true;
-      # python.scan_for_pyfiles = false;
+      add_newline = false;
+      # A minimal left prompt
+      format = """$directory$character""";
+      palette = "catppuccin_mocha";
+      # move the rest of the prompt to the right
+      right_format = """$all""";
+      command_timeout = 1000;
     };
   };
 }
