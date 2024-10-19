@@ -4,7 +4,12 @@
 alt - s: open -a /Applications/Slack.app/Contents/MacOS/Slack
 
 # WezTerm
-alt - w: open -a /Applications/WezTerm.app/Contents/MacOS/WezTerm
+alt - w: |
+  if pgrep -x "WezTerm" > /dev/null; then
+    open -a WezTerm
+  else
+    open -a /Applications/WezTerm.app/Contents/MacOS/WezTerm
+  fi
 
 # Show date
 alt - d: osascript ~/.config/skhd/applescripts/pop.scpt
