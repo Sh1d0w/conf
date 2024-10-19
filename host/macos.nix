@@ -75,7 +75,6 @@
       };
       trackpad = {
         Clicking = true;
-        TrackpadThreeFingerDrag = false;
       };
     };
     keyboard = {
