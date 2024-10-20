@@ -138,7 +138,7 @@ in {
         source = ./bin;
       };
       ".local/bin/switch".source = ../switch;
-      "./config/tmux/plugins/tpm".source = "${tpm}/share/tmux/plugins/tpm";
+      ".config/tmux/plugins/tpm".source = "${tpm}/share/tmux/plugins/tpm";
     };
 
     # NOTE: The shell must be managed by home-manager for env vars and aliases
