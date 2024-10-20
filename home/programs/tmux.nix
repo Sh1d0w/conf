@@ -54,28 +54,11 @@
       set -sag terminal-features ",*:RGB"
       set -sag terminal-features ",*:usstyle"
 
-      # setw -g monitor-activity on
-      # setw -g visual-activity on
       setw -g renumber-windows on
       setw -g allow-rename off
       setw -g status on
       setw -g clock-mode-colour 'default'
 
-      # setw -g display-panes-active-colour colour33
-      # setw -g display-panes-colour colour166
-      # setw -g message-style 'bg=#073642, fg=green'
-      # setw -g pane-border-style 'fg=colour240'
-      # setw -g pane-active-border-style 'fg=white'
-      setw -g status-style bg=default,fg=default
-      setw -g mode-style 'reverse'
-      setw -g message-style fg=orange,bg=default
-      setw -g message-command-style fg=red,bg=default
-
-      # setw -g status-position 'top'
-      # setw -g window-status-style fg=default,bg=default
-      setw -g window-status-current-style reverse,bg=default,fg=default
-      # setw -g window-style 'bg=colour235,fg=colour253'
-      # setw -g window-active-style 'bg=colour235,fg=colour253'
       # List of plugins
       set -g @plugin 'tmux-plugins/tpm'
       set -g @plugin 'tmux-plugins/tmux-sensible'
