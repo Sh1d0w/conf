@@ -77,7 +77,6 @@ in
           </dict>
         </plist>
         EOF
-        launchctl load ${launchAgentPath}
       '';
     })
 
@@ -85,7 +84,6 @@ in
     (mkIf (!config.services.skhd.enable) {
       home.activation.removeSkhdService = lib.hm.dag.entryAfter ["writeBoundary"] ''
         if [ -f ${launchAgentPath} ]; then
-          launchctl unload ${launchAgentPath}
           rm -f ${launchAgentPath}
         fi
       '';
