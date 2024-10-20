@@ -8,7 +8,8 @@ if [ -z "${FORCE+x}" ] && command -v SH_ALIASES_SOURCED 1> /dev/null; then
     return 0
 fi
 
-echo "Setting aliases."
+alias cat="bat"
+alias tmux="tmux -f ~/.config/tmux/tmux.conf"
 
 # NOTE: eza is an exa replacement.
 if command -v eza 1> /dev/null; then

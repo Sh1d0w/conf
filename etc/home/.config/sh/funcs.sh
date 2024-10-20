@@ -11,7 +11,6 @@ if [ -z "${FORCE+x}" ] && command -v SH_FUNCS_SOURCED 1> /dev/null; then
     return 0
 fi
 
-echo "Sourcing functions."
 __local_funcs_nvim_cmd="$(command -v nvim)"
 __local_funcs_git_cmd="$(command -v git)"
 

@@ -50,7 +50,9 @@
       # colors
       # ---------------------------------
       # Allow truecolors.
-      set -as terminal-features ",*:RGB"
+      set -g default-terminal "tmux-256color"
+      set -sag terminal-features ",*:RGB"
+      set -sag terminal-features ",*:usstyle"
 
       # setw -g monitor-activity on
       # setw -g visual-activity on
@@ -74,6 +76,32 @@
       setw -g window-status-current-style reverse,bg=default,fg=default
       # setw -g window-style 'bg=colour235,fg=colour253'
       # setw -g window-active-style 'bg=colour235,fg=colour253'
+      # List of plugins
+      set -g @plugin 'tmux-plugins/tpm'
+      set -g @plugin 'tmux-plugins/tmux-sensible'
+      set -g @plugin 'catppuccin/tmux'
+
+      # Configure the catppuccin plugin
+      set -g @catppuccin_flavor "mocha"
+      set -g @catppuccin_window_default_text " #{=/-32/...:#{s|$USER|~|:#{b:pane_current_path}}}"
+      set -g @catppuccin_window_current_text " #W#{?window_zoomed_flag,(),}"
+
+      set -g @catppuccin_window_status_style "custom"
+      set -g @catppuccin_window_left_separator "█"
+      set -g @catppuccin_window_middle_separator "█"
+      set -g @catppuccin_window_right_separator ""
+      set -g @catppuccin_window_status "icon"
+
+      set -g @catppuccin_status_left_separator "█"
+      set -g @catppuccin_status_right_separator "█"
+
+      set -g status-left ""
+      set -g status-right "#{E:@catppuccin_status_application}"
+      set -ag status-right "#{E:@catppuccin_status_session}"
+      set -ag status-right "#{E:@catppuccin_status_date_time}"
+
+      # Initialize TMUX plugin manager (keep this line at the very bottom of tmux.conf)
+      run '~/.config/tmux/plugins/tpm/tpm'
     '';
   };
 }
