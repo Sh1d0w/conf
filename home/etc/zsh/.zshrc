@@ -30,18 +30,6 @@ setopt share_history             # share hist between sessions
 setopt INTERACTIVE_COMMENTS
 unsetopt hist_ignore_space       # ignore space prefixed commands
 
-# NOTE: iterm shell integration messes with the prompt and causes
-# emacs tramp mode to hang indefinitely.
-# if [[ $TERM == "dumb" ]]; then
-#   unsetopt zle
-#   unsetopt prompt_cr
-#   unsetopt prompt_subst
-#   unfunction precmd
-#   unfunction preexec
-#   PS1='$ '
-#   return
-# fi
-
 # ----------------------------------------------------------------------------
 # Completions
 # ----------------------------------------------------------------------------

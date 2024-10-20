@@ -168,21 +168,10 @@ in {
       MANCOLOR = 1;
       MANPAGER = "nvim --clean +Man!";
       PAGER = "less";
-      PIPX_HOME = "${config.xdg.stateHome}/pipx";
-      POETRY_HOME = "${config.xdg.stateHome}/pypoetry";
-      POETRY_VIRTUALENVS_PATH = "${config.xdg.stateHome}/pypoetry/envs";
-      PYENV = "${config.xdg.stateHome}/pyenv/bin/pyenv";
-      PYENV_ROOT = "${config.xdg.stateHome}/pyenv";
-      PYENV_VIRTUALENV_DISABLE_PROMPT = 1;
-      PYSPARK_DRIVER_PYTHON = "ipython";
-      RUSTUP_HOME = "${config.xdg.stateHome}/rustup";
-      SCREENRC = "${config.xdg.configHome}/screen/screenrc";
-      SPACEMACSDIR = "${config.xdg.configHome}/spacemacs";
       STACK_ROOT = "${config.xdg.stateHome}/stack";
       # home-manager handles plugins directly.
       # TMUX_PLUGIN_MANAGER_PATH = "${config.xdg.stateHome}/tmux/plugins/";
       VISUAL = "nvim";
-      WEECHAT_HOME = "${config.xdg.configHome}/weechat";
       PATH = "${local_bin}:$PATH:${homebrew_prefix}/bin:${homebrew_prefix}/sbin:${config.xdg.stateHome}/cargo/bin:${config.xdg.stateHome}/go/bin";
     };
 
