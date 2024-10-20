@@ -18,9 +18,7 @@ in {
     programs/bash.nix
     programs/tmux.nix
     programs/atuin.nix
-
-    # Modules
-    modules/skhd.nix
+    programs/skhd.nix
   ];
 
   home = {
