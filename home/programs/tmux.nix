@@ -54,6 +54,8 @@
       set -sag terminal-features ",*:RGB"
       set -sag terminal-features ",*:usstyle"
 
+      set -g status-position top
+
       setw -g renumber-windows on
       setw -g allow-rename off
       setw -g status on
@@ -91,6 +93,9 @@
 
       # Initialize TMUX plugin manager (keep this line at the very bottom of tmux.conf)
       run '~/.config/tmux/plugins/tpm/tpm'
+
+      set -g status 2
+      set -g status-format[1] ' '
     '';
   };
 }
