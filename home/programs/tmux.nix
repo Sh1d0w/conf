@@ -40,6 +40,11 @@
 
     extraConfig = ''
       set -g prefix ^A
+
+      # Reload tmux config
+      unbind r
+      bind r source-file ~/.config/tmux/tmux.conf
+
       bind -T copy-mode-vi 'v' send -X begin-selection
       bind -T copy-mode-vi 'y' send -X copy-pipe-and-cancel !
       bind -T copy-mode-vi 'z' send -X rectangle-toggle
@@ -56,10 +61,19 @@
 
       set -g status-position top
 
-      setw -g renumber-windows on
-      setw -g allow-rename off
+      # Start windows and panes at 1, not 0
+      set -g base-index 1
+      set -g pane-base-index 1
+      set-window-option -g pane-base-index 1
+      set-option -g renumber-windows on
       setw -g status on
       setw -g clock-mode-colour 'default'
+
+      setw -g mode-keys vi
+
+      # Open panes in current directory
+      bind h split-window -v -c "#{pane_current_path}"
+      bind v split-window -h -c "#{pane_current_path}"
 
       # List of plugins
       set -g @plugin 'tmux-plugins/tpm'
@@ -71,6 +85,9 @@
 
       # Configure the catppuccin plugin
       set -g @catppuccin_flavor "mocha"
+
+      set -g @catppuccin_status_background "default"
+
       set -g @catppuccin_window_status_style "rounded"
       set -g @catppuccin_window_number_position "right"
 
@@ -85,7 +102,7 @@
       set -g @catppuccin_status_fill "icon"
       set -g @catppuccin_status_connect_separator "no"
 
-      set -g @catppuccin_directory_text "#{pane_current_path}"
+      set -g @catppuccin_directory_text "#( echo \#{pane_current_path} | sed \"s|$HOME|~|\" )"
 
       set -g status-left ""
       set -g  status-right "#{E:@catppuccin_status_directory}"
