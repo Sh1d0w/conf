@@ -32,6 +32,7 @@
       # pkgs.tmuxPlugins.battery
       # pkgs.tmuxPlugins.cpu
       pkgs.tmuxPlugins.yank
+      pkgs.tmuxPlugins.catppuccin
       # {
       #   plugin = pkgs.tmuxPlugins.resurrect;
       #   extraConfig = "set -g @resurrect-strategy-nvim 'session'";

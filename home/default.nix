@@ -22,6 +22,9 @@ in {
     programs/tmux.nix
     programs/atuin.nix
     programs/skhd.nix
+
+    # Wallpapers
+    ./wallpapers/default.nix
   ];
 
   home = {

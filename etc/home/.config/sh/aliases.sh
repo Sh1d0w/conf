@@ -32,8 +32,6 @@ alias .....="cd ../../../.."
 alias .4="cd ../../../.."
 alias hit='git --git-dir="${HOME}/.git/" --work-tree="${HOME}"'
 
-alias update="~/conf/switch"
-
 # Git
 alias gc="git commit -m"
 alias gca="git commit -a -m"
