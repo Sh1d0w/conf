@@ -8,18 +8,18 @@ stdenv.mkDerivation rec {
     owner = "tmux-plugins";
     repo = "tpm";
     rev = "master";  # You can pin a specific commit hash here
-    sha256 = lib.fakeSha256;  # Set this to the correct hash if you know it, or use `nix-prefetch-git`
+    sha256 = "01ribl326n6n0qcq68a8pllbrz6mgw55kxhf9mjdc5vw01zjcvw5";
   };
 
   installPhase = ''
-    mkdir -p $HOME/.tmux/plugins/tpm
-    cp -r * $HOME/.tmux/plugins/tpm/
+    mkdir -p $out/share/tmux/plugins/tpm
+    cp -r * $out/share/tmux/plugins/tpm/
   '';
 
-  meta = with stdenv.lib; {
+  meta = {
     description = "Tmux Plugin Manager";
     homepage = "https://github.com/tmux-plugins/tpm";
-    license = licenses.mit;
-    maintainers = with maintainers; [ ]; # Add maintainers if needed
+    license = lib.licenses.mit;
+    maintainers = with lib.maintainers; [ ]; # Add maintainers if needed
   };
 }

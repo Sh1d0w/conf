@@ -7,6 +7,9 @@
 }: let
   homebrew_prefix = "/opt/homebrew";
   local_bin = "$HOME/.local/bin";
+  tpm = import ./programs/tpm.nix {
+    inherit (pkgs) stdenv fetchFromGitHub lib; # Pass the necessary arguments
+  };
 in {
   # Let home-manager manage itself.
   imports = [
@@ -19,7 +22,6 @@ in {
     programs/tmux.nix
     programs/atuin.nix
     programs/skhd.nix
-    programs/tpm.nix
   ];
 
   home = {
@@ -131,19 +133,12 @@ in {
       #   recursive = true;
       #   source = ./etc/config;
       # };
-      
-      ".config/ipython/profile_default/ipython_config.py".source = ./etc/ipython/config.py;
       ".local/bin" = {
         recursive = true;
         source = ./bin;
       };
       ".local/bin/switch".source = ../switch;
-
-      # # You can also set the file content immediately.
-      # ".gradle/gradle.properties".text = ''
-      #   org.gradle.console=verbose
-      #   org.gradle.daemon.idletimeout=3600000
-      # '';
+      "./config/tmux/plugins/tpm".source = "${tpm}/share/tmux/plugins/tpm";
     };
 
     # NOTE: The shell must be managed by home-manager for env vars and aliases
