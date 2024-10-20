@@ -12,8 +12,12 @@ stdenv.mkDerivation rec {
   };
 
   installPhase = ''
+    echo "Creating installation directory at $out/share/tmux/plugins/tpm"
     mkdir -p $out/share/tmux/plugins/tpm
+    echo "Copying files to installation directory..."
     cp -r * $out/share/tmux/plugins/tpm/
+    echo "Installed files:"
+    ls -la $out/share/tmux/plugins/tpm
   '';
 
   meta = {
