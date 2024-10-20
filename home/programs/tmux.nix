@@ -86,21 +86,24 @@
 
       # Configure the catppuccin plugin
       set -g @catppuccin_flavor "mocha"
-      set -g @catppuccin_window_default_text " #{=/-32/...:#{s|$USER|~|:#{b:pane_current_path}}}"
-      set -g @catppuccin_window_current_text " #W#{?window_zoomed_flag,(),}"
+      set -g @catppuccin_window_status_style "rounded"
+      set -g @catppuccin_window_number_position "right"
 
-      set -g @catppuccin_window_status_style "custom"
-      set -g @catppuccin_window_left_separator "█"
-      set -g @catppuccin_window_middle_separator "█"
-      set -g @catppuccin_window_right_separator ""
-      set -g @catppuccin_window_status "icon"
+      set -g @catppuccin_window_default_fill "number"
+      set -g @catppuccin_window_default_text "#W "
 
-      set -g @catppuccin_status_left_separator "█"
-      set -g @catppuccin_status_right_separator "█"
+      set -g @catppuccin_window_current_fill "number"
+      set -g @catppuccin_window_current_text "#W "
+
+      set -g @catppuccin_status_left_separator  " "
+      set -g @catppuccin_status_right_separator ""
+      set -g @catppuccin_status_fill "icon"
+      set -g @catppuccin_status_connect_separator "no"
+
+      set -g @catppuccin_directory_text "#{pane_current_path}"
 
       set -g status-left ""
-      set -g status-right "#{E:@catppuccin_status_application}"
-      set -ag status-right "#{E:@catppuccin_status_session}"
+      set -g  status-right "#{E:@catppuccin_status_directory}"
       set -ag status-right "#{E:@catppuccin_status_date_time}"
 
       # Initialize TMUX plugin manager (keep this line at the very bottom of tmux.conf)
