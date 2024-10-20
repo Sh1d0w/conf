@@ -31,7 +31,6 @@
       "google-chrome"
       "hammerspoon"
       # "jetbrains-toolbox"
-      "rectangle"
       "wezterm"
       # "warp"
     ];
