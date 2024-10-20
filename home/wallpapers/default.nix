@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, lib, pkgs, ... }:
 
 {
   home.file."${config.xdg.configHome}/wallpaper.png".source = ./flatppuccin_4k_macchiato.png;
@@ -10,14 +10,7 @@
     WALLPAPER_PATH="${config.xdg.configHome}/wallpaper.png"
 
     # Use AppleScript to set the wallpaper for all displays
-    osascript -e "
-    tell application \\"System Events\\"
-      set theDesktops to a reference to every desktop
-      repeat with aDesktop in theDesktops
-        set picture of aDesktop to POSIX file \\"$WALLPAPER_PATH\\"
-      end repeat
-    end tell
-    "
+    osascript -e "tell application \"System Events\" to set picture of every desktop to \"$WALLPAPER_PATH\""
   '';
 
   # Make the script executable
