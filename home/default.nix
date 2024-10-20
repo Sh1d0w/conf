@@ -19,6 +19,7 @@ in {
     programs/tmux.nix
     programs/atuin.nix
     programs/skhd.nix
+    programs/tpm.nix
   ];
 
   home = {
@@ -83,6 +84,7 @@ in {
         tealdeer
         tectonic
         tmux
+        tpm
         tokei
         uutils-coreutils
         wget
