@@ -64,8 +64,9 @@
         autohide-time-modifier = 0.0;
         mru-spaces = false;
         orientation = "left";
-        showhidden = true;
+        showhidden = false;
         tilesize = 64;
+        mineffect = "scale";
       };
       finder = {
         AppleShowAllExtensions = true;
