@@ -7,7 +7,7 @@ stdenv.mkDerivation rec {
   src = fetchFromGitHub {
     owner = "tmux-plugins";
     repo = "tpm";
-    rev = "master";  # You can pin a specific commit hash here
+    rev = "99469c4a9b1ccf77fade25842dc7bafbc8ce9946";  # You can pin a specific commit hash here
     sha256 = "01ribl326n6n0qcq68a8pllbrz6mgw55kxhf9mjdc5vw01zjcvw5";
   };
 
