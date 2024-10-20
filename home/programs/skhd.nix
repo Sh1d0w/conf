@@ -39,12 +39,7 @@ in
           alt - s: open -a /Applications/Slack.app/Contents/MacOS/Slack
 
           # WezTerm
-          alt - w: |
-            if pgrep -x "WezTerm" > /dev/null; then
-              open -a WezTerm
-            else
-              open -a /Applications/WezTerm.app/Contents/MacOS/WezTerm
-            fi
+          alt - w: pgrep -x "wezterm-gui" > /dev/null && open -a WezTerm || open -a /Applications/WezTerm.app/Contents/MacOS/WezTerm
 
           ${config.services.skhd.extraConfig}
         '';
