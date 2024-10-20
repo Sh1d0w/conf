@@ -80,6 +80,9 @@
       set -g @plugin 'tmux-plugins/tpm'
       set -g @plugin 'tmux-plugins/tmux-sensible'
       set -g @plugin 'catppuccin/tmux'
+      set -g @plugin 'tmux-plugins/tmux-yank'
+      set -g @plugin 'fcsonline/tmux-thumbs'
+      set -g @plugin 'sainnhe/tmux-fzf'
 
       # Configure the catppuccin plugin
       set -g @catppuccin_flavor "mocha"

@@ -222,3 +222,15 @@ by this repo are
 [matthias_nixos_config]: https://github.com/MatthiasBenaets/nixos-config
 [mitchellh_nixos_config]: https://github.com/mitchellh/nixos-config
 [flake-utils-plus]: https://github.com/gytis-ivaskevicius/flake-utils-plus
+
+#### tmux-thumbs
+
+```bash
+nix-shell -p rustc cargo libiconv --run "cargo install tmux-thumbs"
+cargo build --release
+```
+
+### Tmux
+
+Ctrl-a [ - Enter copy mode. The v to select, y to copy.
+Ctrl-a ] - Paste.
