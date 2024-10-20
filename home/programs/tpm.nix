@@ -2,7 +2,7 @@
 
 stdenv.mkDerivation rec {
   pname = "tpm";
-  version = "1";
+  version = "2";
 
   src = fetchFromGitHub {
     owner = "tmux-plugins";
