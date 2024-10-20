@@ -2,7 +2,7 @@
 
 stdenv.mkDerivation rec {
   pname = "tpm";
-  version = "latest";  # You can replace this with a specific version or commit hash
+  version = "latest-$(date +%s)";
 
   src = fetchFromGitHub {
     owner = "tmux-plugins";
