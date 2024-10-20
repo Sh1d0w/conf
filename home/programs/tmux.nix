@@ -113,6 +113,8 @@
 
       set -g status 2
       set -g status-format[1] ' '
+      set -g status-bg default
+      set -g status-style bg=default
     '';
   };
 }
