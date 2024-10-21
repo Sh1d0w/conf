@@ -51,6 +51,20 @@
         default = "tracking";
         autoSetupRemote = true;
       };
+      core = {
+        editor = "nvim";
+        pager = "delta";
+        excludeFile = "${config.xdg.configHome}/git/gitignore";
+      };
+      interactive = {
+        diffFilter = "delta --color-only";
+      };
+      merge = {
+        conflictStyle = "diff3";
+      };
+      diff = {
+        colorMoved = "default";
+      };
     };
   };
 }

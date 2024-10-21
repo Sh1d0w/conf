@@ -1,0 +1,14 @@
+# Ignore macOS system files
+.DS_Store
+
+# Ignore Windows system files
+Thumbs.db
+
+# Ignore log files
+*.log
+
+# Ignore node_modules folder
+node_modules/
+
+# Ignore Python bytecode files
+*.pyc
