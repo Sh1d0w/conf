@@ -62,12 +62,6 @@ in
           # balance out tree of windows (resize to occupy same area)
           shift + alt - e : yabai -m space --balance
 
-          # Resize panes using Alt + arrow keys
-          bind -n M-Left  resize-pane -L 5
-          bind -n M-Right resize-pane -R 5
-          bind -n M-Up    resize-pane -U 5
-          bind -n M-Down  resize-pane -D 5
-
           # swap windows
           shift + alt - j : yabai -m window --swap south
           shift + alt - k : yabai -m window --swap north
