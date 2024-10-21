@@ -86,28 +86,25 @@
 
       # Configure the catppuccin plugin
       set -g @catppuccin_flavor "mocha"
-
       set -g @catppuccin_status_background "default"
-
       set -g @catppuccin_window_status_style "rounded"
       set -g @catppuccin_window_number_position "right"
-
       set -g @catppuccin_window_default_fill "number"
       set -g @catppuccin_window_default_text "#W "
-
       set -g @catppuccin_window_current_fill "number"
       set -g @catppuccin_window_current_text "#W "
-
       set -g @catppuccin_status_left_separator  " "
       set -g @catppuccin_status_right_separator ""
       set -g @catppuccin_status_fill "icon"
       set -g @catppuccin_status_connect_separator "no"
-
       set -g @catppuccin_directory_text "#( echo \#{pane_current_path} | sed \"s|$HOME|~|\" )"
 
       set -g status-left ""
       set -g  status-right "#{E:@catppuccin_status_directory}"
       set -ag status-right "#{E:@catppuccin_status_date_time}"
+
+      # Configure tmux thumbs plugin
+      set -g @thumbs-command 'echo -n {} | pbcopy && tmux display-message "Copied {}"'
 
       # Initialize TMUX plugin manager (keep this line at the very bottom of tmux.conf)
       run '~/.config/tmux/plugins/tpm/tpm'
