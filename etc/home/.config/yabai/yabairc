@@ -30,28 +30,28 @@ yabai -m rule --add app="^Calculator$" manage=off
 yabai -m rule --add app="^Karabiner-Elements$" manage=off
 
 # workspace management
-yabai -m space 1 --label todo
-yabai -m space 2 --label productive
-yabai -m space 3 --label chat
-yabai -m space 4 --label utils
-yabai -m space 5 --label code
+# yabai -m space 1 --label todo
+# yabai -m space 2 --label productive
+# yabai -m space 3 --label chat
+# yabai -m space 4 --label utils
+# yabai -m space 5 --label code
 
 # assign apps to spaces
-yabai -m rule --add app="Reminder" space=todo
-yabai -m rule --add app="Mail" space=todo
-yabai -m rule --add app="Calendar" space=todo
+# yabai -m rule --add app="Reminder" space=todo
+# yabai -m rule --add app="Mail" space=todo
+# yabai -m rule --add app="Calendar" space=todo
 
-yabai -m rule --add app="Alacritty" space=productive
-yabai -m rule --add app="Safari" space=productive
+# yabai -m rule --add app="Alacritty" space=productive
+# yabai -m rule --add app="Safari" space=productive
 
-yabai -m rule --add app="Microsoft Teams" space=chat
+# yabai -m rule --add app="Microsoft Teams" space=chat
 yabai -m rule --add app="Slack" space=chat
-yabai -m rule --add app="Signal" space=chat
-yabai -m rule --add app="Messages" space=chat
+# yabai -m rule --add app="Signal" space=chat
+# yabai -m rule --add app="Messages" space=chat
 
-yabai -m rule --add app="Spotify" space=utils
-yabai -m rule --add app="Bitwarden" space=utils
+# yabai -m rule --add app="Spotify" space=utils
+# yabai -m rule --add app="Bitwarden" space=utils
 
-yabai -m rule --add app="Visual Studio Code" space=code
-yabai -m rule --add app="IntelliJ IDEA" space=code
-yabai -m rule --add app="Cursor" space=code
+# yabai -m rule --add app="Visual Studio Code" space=code
+# yabai -m rule --add app="IntelliJ IDEA" space=code
+# yabai -m rule --add app="Cursor" space=code
