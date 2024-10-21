@@ -7,8 +7,8 @@
 }: {
   programs.git = {
     enable = true;
-    userName = "Radoslav Vitanov";
-    userEmail = "radoslav.vitanov@icloud.com";
+    userName = "Sh1d0w";
+    userEmail = "5074917+Sh1d0w@users.noreply.github.com";
     lfs.enable = true;
 
     aliases = {
