@@ -54,7 +54,7 @@
       core = {
         editor = "nvim";
         pager = "delta";
-        excludeFile = "${config.xdg.configHome}/git/gitignore";
+        excludesFile = "${config.xdg.configHome}/git/gitignore";
       };
       interactive = {
         diffFilter = "delta --color-only";
