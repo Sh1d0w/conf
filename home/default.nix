@@ -22,6 +22,7 @@ in {
     programs/tmux.nix
     programs/atuin.nix
     programs/skhd.nix
+    programs/yabai.nix
 
     # Wallpapers
     ./wallpapers/default.nix
@@ -71,7 +72,6 @@ in {
         starship
         tmux
         tpm
-        yabai
         wget
         zoxide # like z
         zellij # terminal multiplexer
@@ -181,6 +181,9 @@ in {
 
   services = {
     skhd = {
+      enable = true;
+    };
+    yabai = {
       enable = true;
     };
   };
