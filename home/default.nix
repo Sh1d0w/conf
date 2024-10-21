@@ -23,6 +23,7 @@ in {
     programs/atuin.nix
     programs/skhd.nix
     programs/yabai.nix
+    ./programs/sketchybar.nix
 
     # Wallpapers
     ./wallpapers/default.nix
@@ -184,6 +185,9 @@ in {
       enable = true;
     };
     yabai = {
+      enable = true;
+    };
+    sketchybar = {
       enable = true;
     };
   };
