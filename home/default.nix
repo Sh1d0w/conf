@@ -74,6 +74,7 @@ in {
         tmux
         tpm
         wget
+        xh
         zoxide # like z
         zellij # terminal multiplexer
         zsh
