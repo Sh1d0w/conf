@@ -4,7 +4,7 @@ with lib;
 
 let
   yabaiConfigFile = "${config.home.homeDirectory}/.config/yabai/yabairc";
-  launchAgentPath = "${config.home.homeDirectory}/Library/LaunchAgents/com.user.yabai.plist";
+  launchAgentPath = "${config.home.homeDirectory}/Library/LaunchAgents/com.koekeishiya.yabai.plist";
 in
 {
   options.services.yabai = {
@@ -27,10 +27,12 @@ in
         <plist version="1.0">
           <dict>
             <key>Label</key>
-            <string>com.user.yabai</string>
+            <string>com.koekeishiya.yabai</string>
             <key>ProgramArguments</key>
             <array>
               <string>${pkgs.yabai}/bin/yabai</string>
+              <string>-c</string>
+              <string>${yabaiConfigFile}</string>
             </array>
             <key>RunAtLoad</key>
             <true/>
@@ -40,6 +42,11 @@ in
             <string>/tmp/yabai.err</string>
             <key>StandardOutPath</key>
             <string>/tmp/yabai.out</string>
+            <key>EnvironmentVariables</key>
+            <dict>
+              <key>PATH</key>
+              <string>${pkgs.yabai}/bin:${pkgs.stdenv.shell}/bin:/usr/local/bin:/usr/bin:/bin</string>
+            </dict>
           </dict>
         </plist>
         EOF
