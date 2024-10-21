@@ -112,6 +112,8 @@
       bind -n M-Up    resize-pane -U 5
       bind -n M-Down  resize-pane -D 5
 
+      bind -n C-w kill-pane
+
       # Initialize TMUX plugin manager (keep this line at the very bottom of tmux.conf)
       run '~/.config/tmux/plugins/tpm/tpm'
 
