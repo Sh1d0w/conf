@@ -31,9 +31,6 @@ in
       # Create skhdrc file with user's configuration
       home.file = {
         "${skhdConfigFile}".text = ''
-          # Slack
-          alt - s: open -a /Applications/Slack.app/Contents/MacOS/Slack
-
           # WezTerm
           alt - w: pgrep -x "wezterm-gui" > /dev/null && open -a WezTerm || open -a /Applications/WezTerm.app/Contents/MacOS/WezTerm
 
