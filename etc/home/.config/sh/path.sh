@@ -2,9 +2,6 @@ if [ -n "${SH_PATH_SOURCED+x}" ]; then
     return 0
 fi
 
-# echo "Updating current path: ${PATH}"
-echo "Setting path."
-
 # nix components get set prior, so append most prefixes
 # usr="/usr/local/bin:/usr/local/sbin:/usr/local/opt/bin:/opt/bin"
 brew="${HOMEBREW_PREFIX}/bin:${HOMEBREW_PREFIX}/sbin"
