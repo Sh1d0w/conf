@@ -106,6 +106,12 @@
       # Configure tmux thumbs plugin
       set -g @thumbs-command 'echo -n {} | pbcopy && tmux display-message "Copied {}"'
 
+      # Resize panes using Alt + arrow keys
+      bind -n M-Left  resize-pane -L 5
+      bind -n M-Right resize-pane -R 5
+      bind -n M-Up    resize-pane -U 5
+      bind -n M-Down  resize-pane -D 5
+
       # Initialize TMUX plugin manager (keep this line at the very bottom of tmux.conf)
       run '~/.config/tmux/plugins/tpm/tpm'
 
