@@ -49,49 +49,29 @@ in {
         alejandra
         awscli2
         bash
-        bandwhich
         bat # cat clone
-        bottom # not top
         cachix
-        # coreutils-prefixed
         carapace # cross-shell completions
         ctags
         nodejs
         curl
         delta # diff
         direnv #
-        du-dust # du + rust = dust
         # entr
         eza # maintained version of exa.
         fd
-        fastmod
-        # gcc
         gh # github cli client
         git
-        glow
-        helix # editor
         htop
-        hyperfine # benchmarking
         jq
         lazygit
         miller
-        moreutils
-        mosh
-        ncurses
-        nushell
-        pandoc
-        procs # ps replacement
-        q-text-as-data
         ripgrep
-        shellcheck
         sd # simple sed
         starship
-        tealdeer
-        tectonic
         tmux
         tpm
-        tokei
-        uutils-coreutils
+        yabai
         wget
         zoxide # like z
         zellij # terminal multiplexer
