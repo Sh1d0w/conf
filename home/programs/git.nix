@@ -65,6 +65,10 @@
       diff = {
         colorMoved = "default";
       };
+      ghq = {
+        root = "${config.xdg.dataHome}/Projects";
+        vcs = "git";
+      };
     };
   };
 }

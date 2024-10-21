@@ -63,6 +63,7 @@ in {
         fd
         gh # github cli client
         git
+        ghq
         htop
         jq
         lazygit
